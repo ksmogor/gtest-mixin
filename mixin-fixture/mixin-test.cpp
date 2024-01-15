@@ -9,7 +9,23 @@
 
 typedef StringFixture<VectorFixture<testing::Test>> MixinStringVectorFixture;
 
-class MixinTest : public MixinStringVectorFixture
+template<template <typename> class T1, template <typename> class ...Ts>
+struct MixinFixture
+{
+    using type = T1<typename MixinFixture<Ts ...>::type>;
+};
+
+template<template <typename> class T>
+struct MixinFixture<T>
+{
+    using type = T<testing::Test>;
+};
+
+template<template <typename> class ...Ts>
+using MixinFixtureType = typename MixinFixture<Ts...>::type;
+
+//class MixinTest : public MixinStringVectorFixture
+class MixinTest : public MixinFixtureType<StringFixture, VectorFixture>
 {
 protected:
     int mixin_member = 10;
