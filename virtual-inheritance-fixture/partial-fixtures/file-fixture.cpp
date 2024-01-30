@@ -1,5 +1,5 @@
 
-#include "FileFixture.h"
+#include "file-fixture.h"
 
 // ifstream::open cannot throw exception, so it's safe to call it inside constructor
 FileFixture::FileFixture() : file_stream("../res/test.txt") {}

@@ -1,7 +1,8 @@
 
+#include "mixin-fixture.h"
 #include "partial-fixtures/memory-fixture.h"
 
-class MemoryTest : public MemoryFixture
+class MemoryTest : public MixinFixture<MemoryFixture>
 {};
 
 TEST_F(MemoryTest, ReadWriteMemory)

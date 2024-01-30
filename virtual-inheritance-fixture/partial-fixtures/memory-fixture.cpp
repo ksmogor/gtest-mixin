@@ -1,5 +1,5 @@
 
-#include "MemoryFixture.h"
+#include "memory-fixture.h"
 
 MemoryFixture::MemoryFixture() : mem_block(nullptr) { }
 

@@ -1,6 +1,6 @@
 
-#include "PartialFixtures/MemoryFixture.h"
-#include "PartialFixtures/FileFixture.h"
+#include "partial-fixtures/memory-fixture.h"
+#include "partial-fixtures/file-fixture.h"
 
 /**
  * With multi-inheritance we have to handle setup and teardown by hand.

@@ -1,7 +1,8 @@
 
+#include "mixin-fixture.h"
 #include "partial-fixtures/file-fixture.h"
 
-class FileTest : public FileFixture
+class FileTest : public MixinFixture<FileFixture>
 {};
 
 TEST_F(FileTest, ReadFile)

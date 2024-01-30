@@ -1,7 +1,7 @@
 # Add test cpp file
 add_executable( virt-inheritance-fixture-test
-        PartialFixtures/FileFixture.cpp PartialFixtures/FileFixture.h
-        PartialFixtures/MemoryFixture.cpp PartialFixtures/MemoryFixture.h
+        partial-fixtures/file-fixture.cpp partial-fixtures/file-fixture.h
+        partial-fixtures/memory-fixture.cpp partial-fixtures/memory-fixture.h
         file-test.cpp
         memory-test.cpp
         both-test.cpp
