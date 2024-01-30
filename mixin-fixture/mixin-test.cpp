@@ -1,7 +1,3 @@
-//
-// Created by ksm on 15/01/24.
-//
-
 
 #include "gtest/gtest.h"
 #include "VectorFixture.h"

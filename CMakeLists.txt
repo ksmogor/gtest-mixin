@@ -1,24 +1,23 @@
 cmake_minimum_required(VERSION 3.27)
-project(mixin_test)
+project(gtest-mixin)
 
 set(CMAKE_CXX_STANDARD 20)
-
 
 ################################
 # GTest
 ################################
 enable_testing()
 find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIR})
+include_directories(${GTEST_INCLUDE_DIRS})
 
+################################
+# Resources
+################################
+add_subdirectory(res)
+
+################################
+# Unit tests
+################################
 add_subdirectory(mixin-fixture)
 add_subdirectory(virtual-inheritance-fixture)
-
-################################
-# Unit Tests
-################################
-# Add test cpp file
-add_executable( runUnitTests testgtest.cpp )
-# Link test executable against gtest & gtest_main
-target_link_libraries(runUnitTests gtest gtest_main)
-add_test( runUnitTests runUnitTests )
+add_subdirectory(in-place)
