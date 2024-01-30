@@ -20,4 +20,4 @@ add_subdirectory(res)
 ################################
 add_subdirectory(mixin-fixture)
 add_subdirectory(virtual-inheritance-fixture)
-add_subdirectory(in-place)
+add_subdirectory(in-place-fixture)
