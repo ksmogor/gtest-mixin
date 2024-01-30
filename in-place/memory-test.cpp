@@ -26,17 +26,17 @@ protected:
             delete [] mem_block;
     }
     
-    void write_offset(const std::string& data, size_t size)
+    void write_offset(const std::string& data, size_t size, size_t offset = 0)
     {
         for (size_t i = 0; i < size; ++i)
-            mem_block[i] = data[i];
+            mem_block[i + offset] = data[i];
     }
 
-    void read_offset(std::string& output, size_t size)
+    void read_offset(std::string& output, size_t size, size_t offset = 0)
     {
         output.resize(size);
         for (size_t i = 0; i < size; ++i)
-            output[i] = mem_block[i];
+            output[i] = mem_block[i + offset];
     }
 };
 
