@@ -32,6 +32,7 @@ TEST_F(FileTest, ReadFile)
     const std::string expected_res = "Hello from test file!";
 
     std::getline(file_stream, result);
+    ASSERT_TRUE(file_stream.good());
 
     ASSERT_EQ(result, expected_res);
 }
