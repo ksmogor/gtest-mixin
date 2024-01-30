@@ -8,9 +8,11 @@ class FileTest : public testing::Test
 protected:
     std::ifstream file_stream;
 
+    // ifstream::open cannot throw exception, so it's safe to call it inside constructor
     FileTest() : file_stream("../res/test.txt") {}
 
     virtual ~FileTest() {
+        // This can go to TearDown and destructor
         file_stream.close();
     }
 
